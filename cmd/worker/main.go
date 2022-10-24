@@ -8,6 +8,7 @@ import (
 	"github.com/peterbourgon/ff"
 	"log"
 	"os"
+	"strings"
 	"time"
 )
 
@@ -48,9 +49,8 @@ func run() error {
 					return
 				}
 				for _, pendingJob := range jobs {
-					switch pendingJob.Action {
+					switch strings.ToLower(pendingJob.Action) {
 					case "sum":
-						log.Println(pendingJob.Data, pendingJob.ID)
 						var result int32
 						for _, v := range pendingJob.Data {
 							result += v
@@ -60,7 +60,6 @@ func run() error {
 							_ = jobRepo.UpdateJob(context.Background(), pendingJob.ID, "ERROR", 0)
 						}
 					case "sub":
-						log.Println(pendingJob.Data, pendingJob.ID)
 						var result int32
 						for _, v := range pendingJob.Data {
 							result -= v

@@ -47,6 +47,10 @@ func (s *Server) SaveJobs(ctx echo.Context) error {
 	if err := ctx.Bind(request); err != nil {
 		return ctx.JSON(http.StatusBadRequest, echo.Map{"message": err.Error()})
 	}
+	if len(request.Data) == 0 {
+		return ctx.JSON(http.StatusBadRequest, echo.Map{"message": "It's not allowed perform jobs with empty data"})
+	}
+
 	ctxReq := ctx.Request().Context()
 
 	err := s.jobRepo.CreateJob(ctxReq, request.Action, request.Data)
