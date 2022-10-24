@@ -22,9 +22,9 @@ The project can be set up by Makefile commands:
 Both commands must be run in different sessions.
 The API can be found at localhost:3000, with the /jobs endpoint, only GET and POST methods are allowed.
 
-#### Body request
+#### Enqueue a JOB:
 
-This it's a example of request:
+This it's an example of enqueue a JOB on POST /jobs:
 
 ```json
 {
@@ -42,3 +42,12 @@ And their response
 ```
 
 It's allowed just "sum" and "sub" actions.
+
+
+### Filters
+
+It's allowed to filter jobs through `status` query parameter on GET /jobs
+
+- done
+- processed
+- error
