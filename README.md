@@ -11,6 +11,8 @@
 
 ![dfd1](./imgs/dfd1.png)
 
+![schema](./imgs/schema.png)
+
 
 ### How to run
 
