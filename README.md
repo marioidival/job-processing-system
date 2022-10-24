@@ -14,6 +14,8 @@
 
 ### How to run
 
+> This project is a simple replica to see the system running.
+
 The project can be set up by Makefile commands:
 
 - make start/api
@@ -23,6 +25,7 @@ Both commands must be run in different sessions.
 The API can be found at localhost:3000, with the /jobs endpoint, only GET and POST methods are allowed.
 
 #### Enqueue a JOB:
+
 
 This it's an example of enqueue a JOB on POST /jobs:
 
