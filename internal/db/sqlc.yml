@@ -1,0 +1,18 @@
+version: 1
+packages:
+  - name: "db"
+    path: "."
+    queries:
+      - "./sql"
+    schema: "./schema/schema.sql"
+    engine: "postgresql"
+    sql_package: "pgx/v4"
+    emit_empty_slices: false
+    emit_exact_table_names: false
+    emit_exported_queries: false
+    emit_interface: true
+    emit_json_tags: false
+    emit_prepared_queries: true
+    output_db_file_name: "db.go"
+    output_models_file_name: "models.go"
+    output_querier_file_name: "querier.go"

@@ -1,0 +1,3 @@
+CREATE DATABASE jobsystem;
+CREATE USER jobsystem WITH ENCRYPTED PASSWORD 'jobsystem';
+ALTER USER jobsystem SUPERUSER;
